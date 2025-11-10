@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charmaine Powell, MBA | Sales Leadership Strategist | Cultivated Growth Network</title>
+    <meta name="description" content="Transform your sales organization with proven training, coaching, and consulting. Growth isn't accidental. It's cultivated.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cgn-yellow: #ECA310;
+            --cgn-light-yellow: #F1D396;
+            --cgn-green: #099437;
+            --cgn-light-green: #C6FFD9;
+            --charcoal: #333333;
+            --medium-grey: #666666;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--charcoal);
+            overflow-x: hidden;
+        }
+
+        /* Desktop - No Scroll */
+        @media (min-width: 769px) {
+            body {
+                overflow: hidden;
+                height: 100vh;
+            }
+        }
+
+        /* Mobile - Allow Scroll */
+        @media (max-width: 768px) {
+            body {
+                overflow-y: auto;
+            }
+        }
+
+        .holder-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--cgn-light-green) 0%, var(--white) 50%, var(--cgn-light-yellow) 100%);
+            padding: 2rem;
+        }
+
+        .holder-content {
+            max-width: 1200px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .holder-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .holder-image img {
+            max-width: 100%;
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+        }
+
+        .holder-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--cgn-green);
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--charcoal);
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--cgn-green);
+            margin-bottom: 2rem;
+        }
+
+        .intro {
+            font-size: 1.25rem;
+            line-height: 1.7;
+            color: var(--medium-grey);
+            margin-bottom: 2rem;
+        }
+
+        .frameworks {
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            border-left: 4px solid var(--cgn-green);
+        }
+
+        .frameworks h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .frameworks-list {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .framework-badge {
+            background-color: var(--cgn-green);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .cta-section {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1.25rem 3rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            text-align: center;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background-color: var(--cgn-yellow);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: #d89209;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(236, 163, 16, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--cgn-green);
+            border: 2px solid var(--cgn-green);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--cgn-green);
+            color: var(--white);
+        }
+
+        .social-links {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            color: var(--cgn-green);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: var(--cgn-yellow);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .holder-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                text-align: center;
+            }
+
+            .holder-image {
+                order: 1;
+            }
+
+            .holder-text {
+                order: 2;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .tagline {
+                font-size: 1.25rem;
+            }
+
+            .intro {
+                font-size: 1.125rem;
+            }
+
+            .cta-section {
+                justify-content: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .frameworks-list {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .holder-container {
+                padding: 2rem 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 350px;
+            }
+
+            .cta-section {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="holder-container">
+        <div class="holder-content">
+            <div class="holder-image">
+                <img src="555450872_10163446931989533_6072865373291686456_n-removebg-preview.png" alt="Charmaine Powell, MBA - Sales Leadership Strategist">
+            </div>
+
+            <div class="holder-text">
+                <div class="logo">Cultivated Growth Network</div>
+
+                <h1>Charmaine Powell, MBA</h1>
+
+                <p class="tagline">Sales Leadership Strategist</p>
+
+                <p class="intro">
+                    With over 20 years of experience, I help sales organizations move from inconsistent results to predictable, scalable growth. Because growth isn't accidental—it's cultivated.
+                </p>
+
+                <div class="frameworks">
+                    <h3>Proprietary Frameworks</h3>
+                    <div class="frameworks-list">
+                        <span class="framework-badge">SEEDS Method™</span>
+                        <span class="framework-badge">ROOTS Framework</span>
+                        <span class="framework-badge">BRANCH Consulting</span>
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <a href="index.html#contact" class="btn btn-primary">Book a Discovery Call</a>
+                    <a href="index.html" class="btn btn-secondary">Explore Services</a>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/charmaine-powell-mba-89175b/" target="_blank" class="social-link">LinkedIn</a>
+                    <span style="color: var(--medium-grey);">|</span>
+                    <a href="mailto:charmaine@cultivatedgrowthnetwork.com" class="social-link">Email</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,661 @@
+/* DIY Courses Page Additional Styles */
+
+/* Page Hero */
+.page-hero {
+    padding: 4rem 0 3rem;
+    background: linear-gradient(135deg, var(--cgn-light-yellow) 0%, var(--white) 100%);
+    border-bottom: 1px solid var(--light-grey);
+}
+
+.diy-hero {
+    background: linear-gradient(135deg, var(--cgn-light-yellow) 0%, var(--white) 60%);
+}
+
+.page-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.breadcrumb {
+    font-size: 0.875rem;
+    color: var(--medium-grey);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.breadcrumb a {
+    color: var(--cgn-green);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.page-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-features {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.feature-badge {
+    background-color: var(--white);
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* Who This Is For Section */
+.who-section {
+    padding: 5rem 0;
+    background-color: var(--white);
+}
+
+.who-section h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.who-section .lead {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.who-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.who-card {
+    background-color: var(--cgn-light-green);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.who-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--cgn-green);
+}
+
+.who-card p {
+    margin-bottom: 0;
+    color: var(--charcoal);
+    font-size: 0.95rem;
+}
+
+/* SEEDS Overview */
+.seeds-overview {
+    padding: 5rem 0;
+    background-color: var(--light-grey);
+}
+
+.seeds-stages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.stage-card {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    text-align: center;
+}
+
+.stage-letter {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    border-radius: 50%;
+    color: var(--white);
+}
+
+.stage-s .stage-letter,
+.stage-s2 .stage-letter {
+    background-color: var(--cgn-yellow);
+}
+
+.stage-e1 .stage-letter,
+.stage-e2 .stage-letter {
+    background-color: var(--cgn-green);
+}
+
+.stage-d .stage-letter {
+    background-color: var(--cgn-yellow);
+}
+
+.stage-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.stage-card p {
+    font-size: 0.95rem;
+    color: var(--medium-grey);
+    margin-bottom: 1rem;
+}
+
+.stage-card ul {
+    list-style: none;
+    text-align: left;
+    font-size: 0.875rem;
+    color: var(--charcoal);
+}
+
+.stage-card ul li {
+    padding: 0.25rem 0;
+    padding-left: 1.25rem;
+    position: relative;
+}
+
+.stage-card ul li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--cgn-green);
+}
+
+/* Course Bundles */
+.course-bundles {
+    padding: 6rem 0;
+    background-color: var(--white);
+}
+
+.bundle-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.bundle-card {
+    background-color: var(--white);
+    border: 2px solid var(--light-grey);
+    border-radius: 10px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.bundle-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.bundle-card.featured {
+    border: 3px solid var(--cgn-green);
+    transform: scale(1.05);
+}
+
+.bundle-card.featured:hover {
+    transform: scale(1.07) translateY(-5px);
+}
+
+.bundle-header {
+    margin-bottom: 1.5rem;
+}
+
+.bundle-header h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.bundle-subtitle {
+    color: var(--cgn-green);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.bundle-price {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: var(--cgn-light-yellow);
+    border-radius: 8px;
+}
+
+.price-amount {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--cgn-yellow);
+}
+
+.price-period {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--medium-grey);
+    margin-top: 0.25rem;
+}
+
+.price-save {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--cgn-green);
+}
+
+.bundle-content {
+    flex-grow: 1;
+}
+
+.bundle-content > p {
+    margin-bottom: 1.5rem;
+}
+
+.bundle-features {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.bundle-features li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.bundle-features li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--cgn-green);
+    font-weight: 700;
+}
+
+.btn-small {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
+/* Individual Modules */
+.individual-modules {
+    padding: 6rem 0;
+    background-color: var(--light-grey);
+}
+
+.modules-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.module-item {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+    transition: box-shadow 0.3s ease;
+}
+
+.module-item:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.module-info {
+    display: flex;
+    gap: 1.5rem;
+    flex: 1;
+    align-items: flex-start;
+}
+
+.module-icon .icon-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.icon-circle.stage-s,
+.icon-circle.stage-s2,
+.icon-circle.stage-d {
+    background-color: var(--cgn-yellow);
+}
+
+.icon-circle.stage-e1,
+.icon-circle.stage-e2 {
+    background-color: var(--cgn-green);
+}
+
+.module-details {
+    flex: 1;
+}
+
+.module-details h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.module-details > p {
+    color: var(--medium-grey);
+    margin-bottom: 1rem;
+}
+
+.module-meta {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    font-size: 0.875rem;
+    color: var(--charcoal);
+}
+
+.module-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.module-price {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--cgn-yellow);
+}
+
+.bundle-cta {
+    text-align: center;
+    padding: 3rem;
+    background-color: var(--cgn-light-green);
+    border-radius: 10px;
+}
+
+.bundle-cta p {
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Specialized Courses */
+.specialized-courses {
+    padding: 6rem 0;
+    background-color: var(--white);
+}
+
+.specialized-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.specialized-card {
+    background-color: var(--light-grey);
+    padding: 2rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.specialized-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--cgn-green);
+}
+
+.course-duration {
+    font-size: 0.875rem;
+    color: var(--medium-grey);
+    margin-bottom: 1rem;
+}
+
+.specialized-card > p {
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.course-topics {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.course-topics li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 0.95rem;
+}
+
+.course-topics li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--cgn-green);
+}
+
+.course-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--white);
+}
+
+.course-price span {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--cgn-green);
+}
+
+/* Free Resources */
+.free-resources {
+    padding: 6rem 0;
+    background-color: var(--cgn-light-green);
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.resource-card {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+}
+
+.resource-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--cgn-green);
+}
+
+.resource-card p {
+    margin-bottom: 1.5rem;
+}
+
+/* Comparison Section */
+.path-comparison {
+    padding: 6rem 0;
+    background-color: var(--white);
+}
+
+.path-comparison h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.path-comparison .lead {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.comparison-table {
+    margin-bottom: 3rem;
+}
+
+.comparison-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid var(--light-grey);
+}
+
+.comparison-row.header-row {
+    background-color: var(--cgn-light-yellow);
+    font-weight: 600;
+    border-radius: 8px 8px 0 0;
+}
+
+.comparison-cell {
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.comparison-cell:first-child {
+    text-align: left;
+    font-weight: 500;
+}
+
+.comparison-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Page CTA */
+.page-cta {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, var(--cgn-yellow) 0%, var(--cgn-green) 100%);
+    color: var(--white);
+    text-align: center;
+}
+
+.page-cta h2 {
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+.page-cta .lead {
+    color: rgba(255,255,255,0.95);
+    margin-bottom: 2rem;
+}
+
+.page-cta .cta-buttons {
+    margin-bottom: 1.5rem;
+}
+
+.cta-subtext {
+    color: rgba(255,255,255,0.9);
+    font-size: 0.95rem;
+    font-style: italic;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 968px) {
+    .page-hero h1 {
+        font-size: 2.25rem;
+    }
+
+    .seeds-stages {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    .module-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .module-info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .module-meta {
+        justify-content: center;
+    }
+
+    .comparison-row {
+        grid-template-columns: 1.5fr 1fr 1fr 1fr;
+        font-size: 0.875rem;
+    }
+
+    .comparison-cell {
+        padding: 0.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .who-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .seeds-stages {
+        grid-template-columns: 1fr;
+    }
+
+    .bundle-card.featured {
+        transform: scale(1);
+    }
+
+    .comparison-table {
+        overflow-x: auto;
+    }
+
+    .comparison-row {
+        min-width: 600px;
+    }
+
+    .course-price {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-hero h1 {
+        font-size: 1.75rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .module-item {
+        padding: 1.5rem;
+    }
+
+    .module-details h3 {
+        font-size: 1.1rem;
+    }
+}
