@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEEDS Method™ Webinar - Cultivated Growth Network</title>
-    <meta name="description" content="Join Charmaine Powell for an exclusive SEEDS Method™ webinar. Learn proven strategies to transform your sales results. Only $49.">
+    <title>SEEDS™ Series: Strategy Deep Dive - Cultivated Growth Network</title>
+    <meta name="description" content="Part 1 of the SEEDS™ Series. Master Sales Strategy with Charmaine Powell, MBA. Transform your approach to selling in 90 minutes. Only $49.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -60,6 +60,19 @@
             margin-bottom: 3rem;
         }
 
+        .series-badge {
+            display: inline-block;
+            background-color: var(--cgn-green);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
         .hero h1 {
             font-size: 2.5rem;
             font-weight: 900;
@@ -75,10 +88,96 @@
             color: var(--black);
         }
 
+        /* Video Container - ClickFunnels Style */
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin: 2rem auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            background-color: #000;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-wrapper iframe,
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .video-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(9, 148, 55, 0.9) 0%, rgba(236, 163, 16, 0.9) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .video-placeholder:hover {
+            background: linear-gradient(135deg, rgba(9, 148, 55, 1) 0%, rgba(236, 163, 16, 1) 100%);
+        }
+
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background-color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .video-placeholder:hover .play-button {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .play-button::after {
+            content: "";
+            width: 0;
+            height: 0;
+            border-left: 25px solid var(--cgn-green);
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            margin-left: 5px;
+        }
+
+        .video-text {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
         .hero .price {
             font-size: 3rem;
             font-weight: 900;
             margin-bottom: 1.5rem;
+            margin-top: 2rem;
             color: var(--black);
         }
 
@@ -275,6 +374,54 @@
             border-radius: 8px;
         }
 
+        /* Series Timeline */
+        .series-timeline {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .series-timeline h3 {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--black);
+        }
+
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1rem;
+        }
+
+        .timeline-item {
+            text-align: center;
+            padding: 1rem;
+            background-color: rgba(9, 148, 55, 0.1);
+            border-radius: 8px;
+            border: 2px solid transparent;
+        }
+
+        .timeline-item.active {
+            background-color: var(--cgn-green);
+            color: var(--white);
+            border: 2px solid var(--black);
+            font-weight: 700;
+        }
+
+        .timeline-letter {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .header {
@@ -289,6 +436,11 @@
                 padding: 80px 1rem 2rem;
             }
 
+            .series-badge {
+                font-size: 0.8rem;
+                padding: 0.4rem 1.2rem;
+            }
+
             .hero h1 {
                 font-size: 1.75rem;
             }
@@ -297,8 +449,45 @@
                 font-size: 1rem;
             }
 
+            .video-container {
+                margin: 1.5rem auto;
+            }
+
+            .play-button {
+                width: 60px;
+                height: 60px;
+            }
+
+            .play-button::after {
+                border-left: 20px solid var(--cgn-green);
+                border-top: 12px solid transparent;
+                border-bottom: 12px solid transparent;
+            }
+
+            .video-text {
+                font-size: 0.85rem;
+                bottom: 15px;
+            }
+
             .hero .price {
                 font-size: 2.25rem;
+            }
+
+            .timeline-grid {
+                grid-template-columns: repeat(5, 1fr);
+                gap: 0.5rem;
+            }
+
+            .timeline-item {
+                padding: 0.5rem;
+            }
+
+            .timeline-letter {
+                font-size: 1.25rem;
+            }
+
+            .timeline-label {
+                font-size: 0.65rem;
             }
 
             .cta-button {
@@ -369,24 +558,76 @@
                 🔥 LIMITED SEATS AVAILABLE - REGISTER TODAY!
             </div>
 
-            <h1>Master the SEEDS Method™ with Charmaine Powell, MBA</h1>
-            <p class="subtitle">Transform Your Sales Results in 90 Minutes</p>
+            <div class="series-badge">Part 1 of 5-Part SEEDS Series</div>
+
+            <h1>The "S" in SEEDS™: Strategy</h1>
+            <p class="subtitle">Master the Foundation of Sales Success in 90 Minutes</p>
+
+            <!-- Video Container -->
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <!-- Replace this placeholder with your video embed code (Vimeo, YouTube, Wistia, etc.) -->
+                    <div class="video-placeholder" onclick="alert('Replace this with your video embed code')">
+                        <div class="play-button"></div>
+                        <div class="video-text">▶ Watch Preview</div>
+                    </div>
+                    <!-- Example for embedding video:
+                    <iframe src="YOUR_VIDEO_URL" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    -->
+                </div>
+            </div>
 
             <div class="price">$49</div>
-            <p class="price-label">Exclusive Webinar Access + Bonus Resources</p>
+            <p class="price-label">This Month's Webinar + Bonus Resources</p>
 
             <a href="#register" class="cta-button">SECURE YOUR SEAT NOW</a>
+
+            <!-- Series Timeline -->
+            <div class="series-timeline">
+                <h3>Complete SEEDS™ Training Series</h3>
+                <div class="timeline-grid">
+                    <div class="timeline-item active">
+                        <div class="timeline-letter">S</div>
+                        <div class="timeline-label">Strategy<br>(This Month)</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-letter">E</div>
+                        <div class="timeline-label">Execution<br>(Month 2)</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-letter">E</div>
+                        <div class="timeline-label">Engagement<br>(Month 3)</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-letter">D</div>
+                        <div class="timeline-label">Development<br>(Month 4)</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-letter">S</div>
+                        <div class="timeline-label">Sustainability<br>(Month 5)</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Strategy Matters -->
+        <section class="section">
+            <h2>Why "Strategy" is the Foundation of SEEDS™</h2>
+            <p>Before you can execute, engage, develop, or sustain—you need a rock-solid strategy. Without it, you're just guessing. With it, you have a roadmap to predictable, scalable growth.</p>
+            <p style="font-weight: 700; color: var(--cgn-green); font-size: 1.25rem; margin-top: 1.5rem;">This webinar deep-dives exclusively into the "S" in SEEDS™—Strategy.</p>
         </section>
 
         <!-- What You'll Learn -->
         <section class="section">
-            <h2>What You'll Learn</h2>
+            <h2>What You'll Master in This 90-Minute Deep Dive</h2>
             <ul>
-                <li>The proven SEEDS Method™ framework that has helped hundreds of sales professionals achieve breakthrough results</li>
-                <li>How to identify and eliminate the hidden obstacles blocking your sales growth</li>
-                <li>Practical strategies you can implement immediately to increase conversions</li>
-                <li>The exact system top performers use to maintain consistent, predictable results</li>
-                <li>How to build a sustainable pipeline that keeps your business thriving</li>
+                <li>The 3 Pillars of Strategic Sales Planning that separate top performers from everyone else</li>
+                <li>How to conduct a Strategic Sales Audit to identify your biggest growth opportunities</li>
+                <li>The exact framework for creating a 90-day sales strategy that drives results</li>
+                <li>How to align your daily activities with long-term revenue goals</li>
+                <li>The strategic mindset shifts that transform reactive sellers into proactive closers</li>
+                <li>Common strategic mistakes that sabotage sales teams (and how to avoid them)</li>
+                <li>Practical tools to implement your strategy immediately after the webinar</li>
             </ul>
         </section>
 
@@ -431,20 +672,20 @@
 
         <!-- Social Proof -->
         <section class="section">
-            <h2>What Past Attendees Say</h2>
+            <h2>What Past Attendees Say About the Strategy Deep Dive</h2>
 
             <div class="testimonial">
-                <p>"Charmaine's SEEDS Method completely transformed how I approach my real estate business. I closed 3 additional deals within the first month of implementing her strategies."</p>
+                <p>"The Strategy session completely changed how I plan my sales activities. I finally have a clear roadmap instead of just winging it every day. My pipeline has never been healthier."</p>
                 <p class="author">— Sarah M., Real Estate Agent</p>
             </div>
 
             <div class="testimonial">
-                <p>"This webinar gave our sales team the clarity and structure we desperately needed. Our conversion rates increased by 40% in just 60 days."</p>
+                <p>"Charmaine's strategic framework gave our team the clarity we desperately needed. We stopped chasing every shiny object and focused on what actually moves the needle. Revenue up 40% in 60 days."</p>
                 <p class="author">— Michael R., Sales Director</p>
             </div>
 
             <div class="testimonial">
-                <p>"Finally, a training that delivers practical, actionable strategies instead of just theory. Worth every penny and then some."</p>
+                <p>"I've taken dozens of sales courses, but this Strategy deep dive was different. It's not generic advice—it's a proven system I could implement immediately. Best $49 I've ever spent on my business."</p>
                 <p class="author">— Jennifer K., Business Owner</p>
             </div>
         </section>
@@ -453,12 +694,28 @@
         <section class="section">
             <h2>Exclusive Bonus Materials Included</h2>
             <ul>
-                <li>SEEDS Method™ Implementation Workbook (Digital Download)</li>
-                <li>30-Day Action Plan to kickstart your transformation</li>
-                <li>Access to exclusive Q&A session with Charmaine</li>
-                <li>Lifetime access to webinar recording</li>
-                <li>Invitation to monthly SEEDS community group</li>
+                <li>Strategic Sales Planning Workbook (Digital Download) - Your step-by-step guide to building your 90-day strategy</li>
+                <li>Strategic Sales Audit Template - Identify your gaps and opportunities in under 30 minutes</li>
+                <li>30-Day Strategy Implementation Checklist - Stay on track with daily action items</li>
+                <li>Access to exclusive Q&A session with Charmaine focused on your strategic challenges</li>
+                <li>Lifetime access to webinar recording so you can revisit the material anytime</li>
+                <li>Invitation to monthly SEEDS™ Series Community Group - Network with other professionals mastering the framework</li>
+                <li>Early-bird notification for upcoming SEEDS™ Series webinars at member pricing</li>
             </ul>
+        </section>
+
+        <!-- Series Information -->
+        <section class="section" style="background-color: rgba(9, 148, 55, 0.1); border: 2px solid var(--cgn-green);">
+            <h2>About the SEEDS™ Series</h2>
+            <p>This webinar is the first in a 5-part monthly series, with each session dedicated to one letter of the SEEDS Method™:</p>
+            <ul style="margin-top: 1.5rem;">
+                <li><strong>Strategy</strong> (This Month) - Build your foundation for sales success</li>
+                <li><strong>Execution</strong> (Month 2) - Turn your strategy into consistent action</li>
+                <li><strong>Engagement</strong> (Month 3) - Master client relationships and connection</li>
+                <li><strong>Development</strong> (Month 4) - Continuously improve your skills and systems</li>
+                <li><strong>Sustainability</strong> (Month 5) - Create long-term, predictable growth</li>
+            </ul>
+            <p style="margin-top: 1.5rem; font-weight: 700; color: var(--cgn-green);">Each webinar is $49 and can be purchased individually. Master one element per month for complete transformation in 5 months.</p>
         </section>
 
         <!-- Risk Reversal -->
@@ -469,21 +726,23 @@
 
         <!-- Final CTA -->
         <div class="footer-cta">
-            <h2>Ready to Transform Your Sales Results?</h2>
-            <p>Join hundreds of sales professionals who have already experienced breakthrough growth with the SEEDS Method™.</p>
+            <h2>Ready to Master Sales Strategy?</h2>
+            <p>Join hundreds of sales professionals building their foundation for success with the SEEDS™ Series.</p>
 
             <div class="urgency" style="margin-bottom: 1.5rem;">
                 ⏰ HURRY - SEATS ARE FILLING FAST!
             </div>
 
-            <a href="#register" class="cta-button">REGISTER NOW FOR ONLY $49</a>
+            <a href="#register" class="cta-button">REGISTER FOR STRATEGY WEBINAR - $49</a>
 
             <p style="margin-top: 1.5rem; font-size: 0.9rem;">Secure payment processing. Instant access upon registration.</p>
+            <p style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.8);">This month: Strategy. Next month: Execution. Build your complete SEEDS™ framework one month at a time.</p>
         </div>
 
         <!-- Registration Form Section (Placeholder) -->
         <section id="register" class="section" style="margin-top: 2rem; border: 3px solid var(--cgn-green);">
-            <h2 style="text-align: center; margin-bottom: 1.5rem;">Secure Your Seat</h2>
+            <h2 style="text-align: center; margin-bottom: 1rem;">Secure Your Seat for Strategy Deep Dive</h2>
+            <p style="text-align: center; font-size: 1rem; margin-bottom: 1.5rem;">Part 1 of the SEEDS™ Series - Only $49</p>
 
             <div style="text-align: center; padding: 2rem; background-color: rgba(9, 148, 55, 0.1); border-radius: 8px;">
                 <p style="font-weight: 700; font-size: 1.25rem; margin-bottom: 1rem;">Payment Form Integration</p>
