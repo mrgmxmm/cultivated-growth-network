@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEEDS Method™ Webinar - Cultivated Growth Network</title>
+    <meta name="description" content="Join Charmaine Powell for an exclusive SEEDS Method™ webinar. Learn proven strategies to transform your sales results. Only $49.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cgn-yellow: #ECA310;
+            --cgn-green: #099437;
+            --black: #000000;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--cgn-yellow);
+            color: var(--black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Logo */
+        .header {
+            padding: 1.5rem 2rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background-color: rgba(236, 163, 16, 0.95);
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 100px 1.5rem 3rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--black);
+        }
+
+        .hero .subtitle {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: var(--black);
+        }
+
+        .hero .price {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            color: var(--black);
+        }
+
+        .hero .price-label {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            color: var(--black);
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--cgn-green);
+            color: var(--white);
+            padding: 1.25rem 3rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            margin: 1rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            background-color: #077a2d;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Content Sections */
+        .section {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--black);
+        }
+
+        .section h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--cgn-green);
+        }
+
+        .section p {
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+            color: var(--black);
+        }
+
+        .section ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .section ul li {
+            font-size: 1.125rem;
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--black);
+        }
+
+        .section ul li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--cgn-green);
+            font-weight: 700;
+        }
+
+        /* Avatar Sections */
+        .avatar-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .avatar-card {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border-left: 5px solid var(--cgn-green);
+        }
+
+        .avatar-card h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--black);
+        }
+
+        .avatar-card p {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--black);
+        }
+
+        /* Social Proof */
+        .testimonial {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+            border-left: 4px solid var(--cgn-green);
+        }
+
+        .testimonial p {
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            color: var(--black);
+        }
+
+        .testimonial .author {
+            font-style: normal;
+            font-weight: 700;
+            color: var(--cgn-green);
+        }
+
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background-color: var(--cgn-green);
+            color: var(--white);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .stat-card .number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card .label {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        /* Footer CTA */
+        .footer-cta {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: var(--white);
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            margin-top: 3rem;
+        }
+
+        .footer-cta h2 {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .footer-cta p {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            color: var(--white);
+        }
+
+        /* Urgency Banner */
+        .urgency {
+            background-color: var(--cgn-green);
+            color: var(--white);
+            padding: 1rem;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .header {
+                padding: 1rem;
+            }
+
+            .logo img {
+                height: 40px;
+            }
+
+            .container {
+                padding: 80px 1rem 2rem;
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+
+            .hero .price {
+                font-size: 2.25rem;
+            }
+
+            .cta-button {
+                width: 100%;
+                padding: 1rem 2rem;
+                font-size: 1.125rem;
+            }
+
+            .section {
+                padding: 1.5rem;
+            }
+
+            .section h2 {
+                font-size: 1.5rem;
+            }
+
+            .section h3 {
+                font-size: 1.125rem;
+            }
+
+            .section p,
+            .section ul li {
+                font-size: 1rem;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .stat-card .number {
+                font-size: 2rem;
+            }
+
+            .footer-cta {
+                padding: 2rem 1.5rem;
+            }
+
+            .footer-cta h2 {
+                font-size: 1.5rem;
+            }
+
+            .footer-cta p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .avatar-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="CGN_Logo_main.webp" alt="Cultivated Growth Network Logo">
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="urgency">
+                🔥 LIMITED SEATS AVAILABLE - REGISTER TODAY!
+            </div>
+
+            <h1>Master the SEEDS Method™ with Charmaine Powell, MBA</h1>
+            <p class="subtitle">Transform Your Sales Results in 90 Minutes</p>
+
+            <div class="price">$49</div>
+            <p class="price-label">Exclusive Webinar Access + Bonus Resources</p>
+
+            <a href="#register" class="cta-button">SECURE YOUR SEAT NOW</a>
+        </section>
+
+        <!-- What You'll Learn -->
+        <section class="section">
+            <h2>What You'll Learn</h2>
+            <ul>
+                <li>The proven SEEDS Method™ framework that has helped hundreds of sales professionals achieve breakthrough results</li>
+                <li>How to identify and eliminate the hidden obstacles blocking your sales growth</li>
+                <li>Practical strategies you can implement immediately to increase conversions</li>
+                <li>The exact system top performers use to maintain consistent, predictable results</li>
+                <li>How to build a sustainable pipeline that keeps your business thriving</li>
+            </ul>
+        </section>
+
+        <!-- Perfect For -->
+        <section class="section">
+            <h2>Perfect For</h2>
+            <div class="avatar-grid">
+                <div class="avatar-card">
+                    <h3>Real Estate Professionals</h3>
+                    <p>Boost your listings, close more deals, and build a referral engine that works year-round.</p>
+                </div>
+                <div class="avatar-card">
+                    <h3>Small Business Sales Teams</h3>
+                    <p>Scale your team's performance with proven systems that create consistency and accountability.</p>
+                </div>
+                <div class="avatar-card">
+                    <h3>Sales Leaders & Entrepreneurs</h3>
+                    <p>Master the leadership skills and strategies needed to drive sustainable revenue growth.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Charmaine -->
+        <section class="section">
+            <h2>Meet Your Instructor</h2>
+            <h3>Charmaine Powell, MBA</h3>
+            <p>Sales Leadership Strategist with 20+ years of proven experience helping organizations transform their sales performance.</p>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="number">20+</div>
+                    <div class="label">Years Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">500+</div>
+                    <div class="label">Clients Trained</div>
+                </div>
+            </div>
+
+            <p>Charmaine has developed proprietary frameworks including the SEEDS Method™, ROOTS Framework, and BRANCH Consulting approach. Her training has helped sales professionals across industries achieve measurable, lasting results.</p>
+        </section>
+
+        <!-- Social Proof -->
+        <section class="section">
+            <h2>What Past Attendees Say</h2>
+
+            <div class="testimonial">
+                <p>"Charmaine's SEEDS Method completely transformed how I approach my real estate business. I closed 3 additional deals within the first month of implementing her strategies."</p>
+                <p class="author">— Sarah M., Real Estate Agent</p>
+            </div>
+
+            <div class="testimonial">
+                <p>"This webinar gave our sales team the clarity and structure we desperately needed. Our conversion rates increased by 40% in just 60 days."</p>
+                <p class="author">— Michael R., Sales Director</p>
+            </div>
+
+            <div class="testimonial">
+                <p>"Finally, a training that delivers practical, actionable strategies instead of just theory. Worth every penny and then some."</p>
+                <p class="author">— Jennifer K., Business Owner</p>
+            </div>
+        </section>
+
+        <!-- Bonus Section -->
+        <section class="section">
+            <h2>Exclusive Bonus Materials Included</h2>
+            <ul>
+                <li>SEEDS Method™ Implementation Workbook (Digital Download)</li>
+                <li>30-Day Action Plan to kickstart your transformation</li>
+                <li>Access to exclusive Q&A session with Charmaine</li>
+                <li>Lifetime access to webinar recording</li>
+                <li>Invitation to monthly SEEDS community group</li>
+            </ul>
+        </section>
+
+        <!-- Risk Reversal -->
+        <section class="section">
+            <h2>100% Satisfaction Guarantee</h2>
+            <p>We're confident you'll find immense value in this webinar. If within 7 days you don't believe the SEEDS Method™ can transform your sales results, we'll refund your investment in full. No questions asked.</p>
+        </section>
+
+        <!-- Final CTA -->
+        <div class="footer-cta">
+            <h2>Ready to Transform Your Sales Results?</h2>
+            <p>Join hundreds of sales professionals who have already experienced breakthrough growth with the SEEDS Method™.</p>
+
+            <div class="urgency" style="margin-bottom: 1.5rem;">
+                ⏰ HURRY - SEATS ARE FILLING FAST!
+            </div>
+
+            <a href="#register" class="cta-button">REGISTER NOW FOR ONLY $49</a>
+
+            <p style="margin-top: 1.5rem; font-size: 0.9rem;">Secure payment processing. Instant access upon registration.</p>
+        </div>
+
+        <!-- Registration Form Section (Placeholder) -->
+        <section id="register" class="section" style="margin-top: 2rem; border: 3px solid var(--cgn-green);">
+            <h2 style="text-align: center; margin-bottom: 1.5rem;">Secure Your Seat</h2>
+
+            <div style="text-align: center; padding: 2rem; background-color: rgba(9, 148, 55, 0.1); border-radius: 8px;">
+                <p style="font-weight: 700; font-size: 1.25rem; margin-bottom: 1rem;">Payment Form Integration</p>
+                <p style="margin-bottom: 1.5rem;">Connect your preferred payment processor here:</p>
+                <p style="font-size: 0.9rem; color: #666;">Stripe, PayPal, or your preferred checkout solution</p>
+
+                <div style="margin-top: 2rem;">
+                    <a href="#" class="cta-button" onclick="alert('Connect your payment processor here'); return false;">COMPLETE REGISTRATION - $49</a>
+                </div>
+            </div>
+
+            <p style="text-align: center; margin-top: 1.5rem; font-size: 0.85rem;">
+                Questions? Email: <a href="mailto:charmaine@cultivatedgrowthnetwork.com" style="color: var(--cgn-green); font-weight: 600;">charmaine@cultivatedgrowthnetwork.com</a>
+            </p>
+        </section>
+    </div>
+</body>
+</html>

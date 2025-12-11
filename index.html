@@ -54,6 +54,19 @@
             min-height: 100vh;
             background: linear-gradient(135deg, var(--cgn-light-green) 0%, var(--white) 50%, var(--cgn-light-yellow) 100%);
             padding: 2rem;
+            position: relative;
+        }
+
+        .header-logo {
+            position: absolute;
+            top: 1.5rem;
+            left: 2rem;
+            z-index: 10;
+        }
+
+        .header-logo img {
+            height: 60px;
+            width: auto;
         }
 
         .holder-content {
@@ -250,6 +263,15 @@
                 padding: 2rem 1rem;
             }
 
+            .header-logo {
+                top: 1rem;
+                left: 1rem;
+            }
+
+            .header-logo img {
+                height: 50px;
+            }
+
             h1 {
                 font-size: 2rem;
             }
@@ -268,6 +290,9 @@
 </head>
 <body>
     <div class="holder-container">
+        <div class="header-logo">
+            <img src="CGN_Logo_main.webp" alt="Cultivated Growth Network Logo">
+        </div>
         <div class="holder-content">
             <div class="holder-image">
                 <img src="555450872_10163446931989533_6072865373291686456_n-removebg-preview.png" alt="Charmaine Powell, MBA - Sales Leadership Strategist">
