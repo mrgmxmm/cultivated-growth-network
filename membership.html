@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEEDS™ Series Membership - Cultivated Growth Network</title>
+    <meta name="description" content="Join the SEEDS™ Series Membership for exclusive access to Q&A sessions, member pricing, and ongoing support from Charmaine Powell, MBA.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cgn-yellow: #ECA310;
+            --cgn-green: #099437;
+            --black: #000000;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--cgn-yellow);
+            color: var(--black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Logo */
+        .header {
+            padding: 1.5rem 2rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background-color: rgba(236, 163, 16, 0.95);
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 100px 1.5rem 3rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .membership-badge {
+            display: inline-block;
+            background-color: var(--cgn-green);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--black);
+        }
+
+        .hero .subtitle {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: var(--black);
+        }
+
+        /* Pricing Cards */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .pricing-card {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            border: 3px solid var(--cgn-green);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--cgn-green);
+            background-color: rgba(9, 148, 55, 0.05);
+        }
+
+        .pricing-card .badge {
+            background-color: var(--cgn-green);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--black);
+        }
+
+        .pricing-card .price {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--cgn-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-card .price-period {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-card .savings {
+            background-color: var(--cgn-yellow);
+            color: var(--black);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-card ul li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .pricing-card ul li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--cgn-green);
+            font-weight: 700;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--cgn-green);
+            color: var(--white);
+            padding: 1.25rem 3rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            margin: 1rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            width: 100%;
+        }
+
+        .cta-button:hover {
+            background-color: #077a2d;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Content Sections */
+        .section {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--black);
+        }
+
+        .section h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--cgn-green);
+        }
+
+        .section p {
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+            color: var(--black);
+        }
+
+        .section ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .section ul li {
+            font-size: 1.125rem;
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--black);
+        }
+
+        .section ul li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--cgn-green);
+            font-weight: 700;
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .comparison-table th {
+            background-color: var(--cgn-green);
+            color: var(--white);
+            font-weight: 700;
+        }
+
+        .comparison-table tr:hover {
+            background-color: rgba(9, 148, 55, 0.05);
+        }
+
+        /* Urgency Banner */
+        .urgency {
+            background-color: var(--cgn-green);
+            color: var(--white);
+            padding: 1rem;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+        }
+
+        /* Footer CTA */
+        .footer-cta {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: var(--white);
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            margin-top: 3rem;
+        }
+
+        .footer-cta h2 {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .footer-cta p {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            color: var(--white);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .header {
+                padding: 1rem;
+            }
+
+            .logo img {
+                height: 40px;
+            }
+
+            .container {
+                padding: 80px 1rem 2rem;
+            }
+
+            .membership-badge {
+                font-size: 0.8rem;
+                padding: 0.4rem 1.2rem;
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .pricing-card .price {
+                font-size: 2.5rem;
+            }
+
+            .cta-button {
+                padding: 1rem 2rem;
+                font-size: 1.125rem;
+            }
+
+            .section {
+                padding: 1.5rem;
+            }
+
+            .section h2 {
+                font-size: 1.5rem;
+            }
+
+            .section h3 {
+                font-size: 1.125rem;
+            }
+
+            .section p,
+            .section ul li {
+                font-size: 1rem;
+            }
+
+            .footer-cta {
+                padding: 2rem 1.5rem;
+            }
+
+            .footer-cta h2 {
+                font-size: 1.5rem;
+            }
+
+            .footer-cta p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="CGN_Logo_main.webp" alt="Cultivated Growth Network Logo">
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="urgency">
+                🌱 JOIN THE COMMUNITY - GET EXCLUSIVE MEMBER BENEFITS!
+            </div>
+
+            <div class="membership-badge">SEEDS™ Series Membership</div>
+
+            <h1>Unlock Your Full Sales Potential</h1>
+            <p class="subtitle">Get exclusive access, member pricing, and ongoing support throughout your SEEDS™ journey</p>
+        </section>
+
+        <!-- Pricing Section -->
+        <section>
+            <h2 style="text-align: center; font-size: 2rem; font-weight: 900; margin-bottom: 2rem;">Choose Your Membership Plan</h2>
+
+            <div class="pricing-grid">
+                <!-- Monthly Plan -->
+                <div class="pricing-card">
+                    <h3>Monthly Membership</h3>
+                    <div class="price">$14.99</div>
+                    <p class="price-period">per month</p>
+                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 1.5rem;">Flexible monthly commitment</p>
+                    <a href="#register" class="cta-button">JOIN MONTHLY</a>
+                </div>
+
+                <!-- Annual Plan -->
+                <div class="pricing-card featured">
+                    <div class="badge">Best Value</div>
+                    <h3>Annual Membership</h3>
+                    <div class="price">$179.88</div>
+                    <p class="price-period">one-time payment</p>
+                    <div class="savings">Save Over $100 Annually!</div>
+                    <a href="#register" class="cta-button">JOIN ANNUALLY</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Member Benefits -->
+        <section class="section">
+            <h2>Exclusive Member Benefits</h2>
+            <p style="font-weight: 600; color: var(--cgn-green); margin-bottom: 1.5rem;">As a SEEDS™ Series member, you get:</p>
+            <ul>
+                <li>Access to exclusive Q&A sessions with Charmaine focused on your strategic challenges</li>
+                <li>Lifetime access to all webinar recordings so you can revisit the material anytime</li>
+                <li>Monthly SEEDS™ Series Community Group - Network with other professionals mastering the framework</li>
+                <li>Early-bird notification for upcoming SEEDS™ Series webinars at member pricing</li>
+                <li>Priority registration for all SEEDS™ Series events and workshops</li>
+                <li>Exclusive member-only resources, templates, and tools</li>
+                <li>Direct access to members-only discussion forum</li>
+                <li>Special discount codes for all SEEDS™ Series sessions (individual and all-session codes)</li>
+            </ul>
+        </section>
+
+        <!-- SEEDS Series Member Pricing -->
+        <section class="section" style="background-color: rgba(9, 148, 55, 0.1); border: 2px solid var(--cgn-green);">
+            <h2>SEEDS™ Series Member Pricing</h2>
+            <p>Members receive exclusive discounted pricing on all SEEDS™ Series webinars throughout 2025:</p>
+
+            <div style="margin: 2rem 0;">
+                <h3>Individual Session Pricing</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Session</th>
+                            <th>Regular Price</th>
+                            <th>Member Price</th>
+                            <th>You Save</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Strategy</strong> (January)</td>
+                            <td>$47-$97</td>
+                            <td>$37</td>
+                            <td style="color: var(--cgn-green); font-weight: 700;">$10-$60</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Engage</strong> (February)</td>
+                            <td>$47-$97</td>
+                            <td>$37</td>
+                            <td style="color: var(--cgn-green); font-weight: 700;">$10-$60</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Explore</strong> (February)</td>
+                            <td>$47-$97</td>
+                            <td>$37</td>
+                            <td style="color: var(--cgn-green); font-weight: 700;">$10-$60</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Deliver</strong> (March)</td>
+                            <td>$47-$97</td>
+                            <td>$37</td>
+                            <td style="color: var(--cgn-green); font-weight: 700;">$10-$60</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sustain</strong> (March)</td>
+                            <td>$47-$97</td>
+                            <td>$37</td>
+                            <td style="color: var(--cgn-green); font-weight: 700;">$10-$60</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="background-color: var(--white); padding: 1.5rem; border-radius: 8px; margin-top: 2rem;">
+                <h3>All-Access Pass - Member Exclusive</h3>
+                <p style="font-size: 1.125rem; margin-bottom: 1rem;">Get all 5 SEEDS™ Series webinars at once:</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                    <div>
+                        <p style="font-size: 1rem; color: #666; margin-bottom: 0.5rem;">Regular Price: <span style="text-decoration: line-through;">$235-$485</span></p>
+                        <p style="font-size: 1.75rem; font-weight: 900; color: var(--cgn-green);">Member Price: $149</p>
+                    </div>
+                    <div style="background-color: var(--cgn-yellow); padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                        <p style="font-weight: 700; font-size: 1.25rem;">Save up to $336!</p>
+                    </div>
+                </div>
+            </div>
+
+            <p style="margin-top: 2rem; font-weight: 700; color: var(--cgn-green); text-align: center;">Use your exclusive member discount codes at checkout for instant savings!</p>
+        </section>
+
+        <!-- Why Join -->
+        <section class="section">
+            <h2>Why Join the Membership?</h2>
+            <p>The SEEDS™ Series Membership is designed for sales professionals who are serious about long-term growth and consistent improvement.</p>
+
+            <div style="margin-top: 2rem;">
+                <h3>Perfect For:</h3>
+                <ul>
+                    <li>Sales professionals committed to mastering all 5 components of the SEEDS Method™</li>
+                    <li>Business owners who want ongoing support and community throughout their sales journey</li>
+                    <li>Leaders who value continuous learning and networking with like-minded professionals</li>
+                    <li>Anyone who wants the best value and maximum support as they transform their sales approach</li>
+                </ul>
+            </div>
+
+            <div style="margin-top: 2rem; background-color: rgba(9, 148, 55, 0.05); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--cgn-green);">
+                <p style="font-weight: 700; font-size: 1.125rem; margin-bottom: 0.5rem;">Do the Math:</p>
+                <p>Annual Membership ($179.88) + All-Access Pass ($149) = <strong style="color: var(--cgn-green);">$328.88 for everything</strong></p>
+                <p style="margin-top: 0.5rem;">That's less than the cost of 2-3 individual webinars at regular price, plus you get all the exclusive member benefits!</p>
+            </div>
+        </section>
+
+        <!-- Complimentary Consultation -->
+        <section class="section">
+            <h2>Bonus: Complimentary Strategy Consultation</h2>
+            <p>All members receive one complimentary strategy consultation with Charmaine to review your challenges and explore how to apply the SEEDS Method™ to your business, including 1:1 coaching opportunities.</p>
+        </section>
+
+        <!-- Final CTA -->
+        <div class="footer-cta">
+            <h2>Ready to Join the Community?</h2>
+            <p>Start your membership today and unlock exclusive access, member pricing, and ongoing support.</p>
+
+            <div class="urgency" style="margin-bottom: 1.5rem;">
+                🌱 JOIN NOW AND START SAVING IMMEDIATELY!
+            </div>
+
+            <a href="#register" class="cta-button">BECOME A MEMBER TODAY</a>
+
+            <p style="margin-top: 1.5rem; font-size: 0.9rem;">Secure payment processing. Instant access upon registration.</p>
+            <p style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.8);">Cancel anytime for monthly plans. Annual memberships are non-refundable but transferable.</p>
+        </div>
+
+        <!-- Registration Form Section (Placeholder) -->
+        <section id="register" class="section" style="margin-top: 2rem; border: 3px solid var(--cgn-green);">
+            <h2 style="text-align: center; margin-bottom: 1rem;">Join the SEEDS™ Series Membership</h2>
+            <p style="text-align: center; font-size: 1rem; margin-bottom: 1.5rem;">Choose your plan and start your journey today</p>
+
+            <div style="text-align: center; padding: 2rem; background-color: rgba(9, 148, 55, 0.1); border-radius: 8px;">
+                <p style="font-weight: 700; font-size: 1.25rem; margin-bottom: 1rem;">Payment Form Integration</p>
+                <p style="margin-bottom: 1.5rem;">Connect your preferred payment processor here:</p>
+                <p style="font-size: 0.9rem; color: #666; margin-bottom: 1.5rem;">Stripe, PayPal, or your preferred checkout solution</p>
+                <p style="font-size: 0.9rem; color: #666; margin-bottom: 1.5rem;">Set up recurring billing for monthly option and one-time payment for annual option</p>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem;">
+                    <a href="#" class="cta-button" onclick="alert('Connect your payment processor for monthly membership'); return false;">JOIN MONTHLY - $14.99</a>
+                    <a href="#" class="cta-button" onclick="alert('Connect your payment processor for annual membership'); return false;">JOIN ANNUALLY - $179.88</a>
+                </div>
+            </div>
+
+            <p style="text-align: center; margin-top: 1.5rem; font-size: 0.85rem;">
+                Questions? Email: <a href="mailto:charmaine@cultivatedgrowthnetwork.com" style="color: var(--cgn-green); font-weight: 600;">charmaine@cultivatedgrowthnetwork.com</a>
+            </p>
+        </section>
+    </div>
+</body>
+</html>
