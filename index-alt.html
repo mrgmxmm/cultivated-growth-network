@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fix Sales Performance at the Root - Cultivated Growth Network</title>
+    <meta name="description" content="Diagnose and repair underperforming sales systems. The Cultivated Growth Network helps sales professionals achieve measurable, repeatable, sustainable growth in 90 days.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cgn-yellow: #ECA310;
+            --cgn-green: #099437;
+            --black: #000000;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--cgn-yellow);
+            color: var(--black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Logo */
+        .header {
+            padding: 1.5rem 2rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background-color: rgba(236, 163, 16, 0.95);
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 100px 1.5rem 3rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--black);
+        }
+
+        .hero .subtitle {
+            font-size: 1.35rem;
+            font-weight: 500;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            color: var(--black);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero .cta-primary {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--cgn-green);
+            margin-top: 1rem;
+        }
+
+        /* Content Sections */
+        .section {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--black);
+        }
+
+        .section h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--cgn-green);
+        }
+
+        .section h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--black);
+        }
+
+        .section p {
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+            color: var(--black);
+            line-height: 1.7;
+        }
+
+        .section ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .section ul li {
+            font-size: 1.125rem;
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--black);
+            line-height: 1.6;
+        }
+
+        .section ul li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--cgn-green);
+            font-weight: 900;
+            font-size: 1.5rem;
+        }
+
+        /* Framework Cards */
+        .framework-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .framework-card {
+            background-color: rgba(9, 148, 55, 0.05);
+            border: 2px solid var(--cgn-green);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .framework-card h4 {
+            color: var(--cgn-green);
+            font-size: 1.35rem;
+            margin-bottom: 1rem;
+        }
+
+        .framework-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Problem Statement */
+        .problem-box {
+            background-color: rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--cgn-green);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .problem-box p {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background-color: var(--cgn-green);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .highlight-box h3 {
+            color: var(--white);
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .highlight-box p {
+            color: var(--white);
+            font-size: 1.25rem;
+            margin-bottom: 0;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--cgn-green);
+            color: var(--white);
+            padding: 1.25rem 3rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            margin: 1rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            background-color: #077a2d;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer CTA */
+        .footer-cta {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.85);
+            color: var(--white);
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            margin-top: 3rem;
+        }
+
+        .footer-cta h2 {
+            font-size: 2.25rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .footer-cta p {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            line-height: 1.7;
+        }
+
+        .footer-cta .tagline {
+            font-size: 1.5rem;
+            font-weight: 700;
+            font-style: italic;
+            color: var(--cgn-yellow);
+            margin-bottom: 2rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .header {
+                padding: 1rem;
+            }
+
+            .logo img {
+                height: 40px;
+            }
+
+            .container {
+                padding: 80px 1rem 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.125rem;
+            }
+
+            .hero .cta-primary {
+                font-size: 1.25rem;
+            }
+
+            .framework-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .section {
+                padding: 1.5rem;
+            }
+
+            .section h2 {
+                font-size: 1.5rem;
+            }
+
+            .section h3 {
+                font-size: 1.25rem;
+            }
+
+            .section h4 {
+                font-size: 1.125rem;
+            }
+
+            .section p,
+            .section ul li {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                width: 100%;
+                padding: 1rem 2rem;
+                font-size: 1.125rem;
+            }
+
+            .footer-cta {
+                padding: 2rem 1.5rem;
+            }
+
+            .footer-cta h2 {
+                font-size: 1.75rem;
+            }
+
+            .footer-cta p {
+                font-size: 1.125rem;
+            }
+
+            .footer-cta .tagline {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="CGN_Logo_main.webp" alt="Cultivated Growth Network Logo">
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Fix Sales Performance at the Root</h1>
+            <p class="subtitle">Most sales and communication problems aren't caused by effort—they're caused by broken strategy, unclear process, or misaligned execution.</p>
+            <p class="subtitle">The Cultivated Growth Network helps sales professionals, managers, and business owners diagnose and repair underperforming sales systems—so growth becomes measurable, repeatable, and sustainable in as little as 90 days.</p>
+        </section>
+
+        <!-- Why Most Sales Training Fails -->
+        <section class="section">
+            <h2>Why Most Sales Training Fails</h2>
+            <p>Organizations often invest in training, coaching, or new hires—yet results stall.</p>
+            <p style="font-weight: 700; font-size: 1.25rem;">Why?</p>
+            <p style="font-weight: 600; margin-bottom: 1.5rem;">Because the root cause is rarely identified.</p>
+
+            <ul>
+                <li>Strategy and communication are misaligned</li>
+                <li>Sales processes are inconsistent or undefined</li>
+                <li>Leaders are promoted without the tools to lead performance</li>
+                <li>Coaching focuses on activity instead of outcomes</li>
+            </ul>
+
+            <div class="problem-box">
+                <p>Without diagnosis, even well-intentioned solutions fail to deliver growth.</p>
+            </div>
+        </section>
+
+        <!-- A Different Approach -->
+        <section class="section">
+            <h2>A Different Approach to Sales Growth</h2>
+            <p>The Cultivated Growth Network applies Six Sigma discipline to sales and leadership development—removing guesswork and addressing what actually limits performance.</p>
+
+            <p style="font-weight: 700; margin-top: 1.5rem;">We don't deliver off-the-shelf training.</p>
+            <p style="font-weight: 700;">We diagnose, design, and install systems aligned to your goals.</p>
+
+            <p style="margin-top: 1.5rem;">Our work integrates strategy, skill, and execution—so progress sticks.</p>
+        </section>
+
+        <!-- The CGN Methodology -->
+        <section class="section" style="background-color: rgba(9, 148, 55, 0.08);">
+            <h2>The CGN Methodology</h2>
+            <h3 style="text-align: center; margin-bottom: 2rem;">A System Built for Real-World Results</h3>
+            <p style="text-align: center; margin-bottom: 2rem;">Our proprietary approach combines three interconnected frameworks:</p>
+
+            <div class="framework-grid">
+                <div class="framework-card">
+                    <h4>SEEDS™ Method of Selling</h4>
+                    <p>A structured sales framework that strengthens strategy, communication, consistency, and execution across the sales process.</p>
+                </div>
+                <div class="framework-card">
+                    <h4>ROOTS™ Coaching</h4>
+                    <p>Targeted 1:1 and leadership coaching focused on mindset, skill development, and accountability.</p>
+                </div>
+                <div class="framework-card">
+                    <h4>BRANCH™ Consulting</h4>
+                    <p>Business and sales consulting that aligns strategy, process, and performance using Six Sigma principles.</p>
+                </div>
+            </div>
+
+            <p style="text-align: center; margin-top: 2rem; font-weight: 600; font-size: 1.125rem;">Together, these create a complete system—providing clarity, direction, and a repeatable playbook for growth.</p>
+        </section>
+
+        <!-- How We Work -->
+        <section class="section">
+            <h2>How We Work</h2>
+            <p>We partner with organizations through flexible, customized engagements, including:</p>
+
+            <ul style="margin-top: 1.5rem;">
+                <li>Prepared webinars and leadership sessions</li>
+                <li>Training tailored to specific teams or roles</li>
+                <li>Requested workshops addressing targeted challenges</li>
+                <li>1:1 sales professional and leadership coaching</li>
+                <li>Business and sales process consulting</li>
+            </ul>
+
+            <div class="highlight-box" style="margin-top: 2rem;">
+                <p style="font-weight: 600;">Every engagement is customized. Every recommendation is intentional. Every outcome is tied to your goals.</p>
+            </div>
+        </section>
+
+        <!-- What You Can Expect -->
+        <section class="section">
+            <h2>What You Can Expect in the First 90 Days</h2>
+            <p>Clients work with The Cultivated Growth Network to achieve:</p>
+
+            <ul style="margin-top: 1.5rem;">
+                <li>Clear diagnosis of sales and communication gaps</li>
+                <li>Aligned strategy and execution</li>
+                <li>Improved consistency and accountability</li>
+                <li>Measurable movement toward stated growth goals</li>
+            </ul>
+
+            <p style="font-weight: 700; margin-top: 2rem; color: var(--cgn-green); font-size: 1.125rem;">Success is defined by progress that can be seen, measured, and sustained.</p>
+        </section>
+
+        <!-- Who We Serve -->
+        <section class="section">
+            <h2>Who We Serve</h2>
+            <p style="margin-bottom: 1.5rem;">We work with:</p>
+
+            <ul>
+                <li>Sales professionals and sales managers</li>
+                <li>HR leaders supporting performance and development</li>
+                <li>Business owners of all sizes ready to scale with structure</li>
+            </ul>
+
+            <p style="margin-top: 2rem; font-weight: 600; font-size: 1.125rem;">If growth has slowed—or effort isn't translating into results—we help identify why and fix it.</p>
+        </section>
+
+        <!-- Final CTA -->
+        <div class="footer-cta">
+            <h2>Ready to Strengthen Your Sales Foundation?</h2>
+            <p class="tagline">Growth doesn't happen by chance—it's cultivated.</p>
+            <p>It happens when strategy, communication, and execution are aligned.</p>
+            <p style="margin-top: 2rem; margin-bottom: 2.5rem;">Let's identify what's holding your sales performance back—and build a system that works.</p>
+
+            <a href="#contact" class="cta-button">SCHEDULE A CONSULTATION</a>
+
+            <p style="margin-top: 1.5rem; font-size: 0.9rem;">
+                Email: <a href="mailto:charmaine@cultivatedgrowthnetwork.com" style="color: var(--cgn-yellow); font-weight: 600; text-decoration: none;">charmaine@cultivatedgrowthnetwork.com</a>
+            </p>
+        </div>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section" style="margin-top: 2rem; border: 3px solid var(--cgn-green);">
+            <h2 style="text-align: center; margin-bottom: 1rem;">Get Started Today</h2>
+            <p style="text-align: center; font-size: 1rem; margin-bottom: 2rem;">Schedule a complimentary consultation to discuss your sales challenges and explore how we can help.</p>
+
+            <div style="text-align: center; padding: 2rem; background-color: rgba(9, 148, 55, 0.05); border-radius: 8px;">
+                <p style="font-weight: 700; font-size: 1.25rem; margin-bottom: 1rem;">Contact Form Integration</p>
+                <p style="margin-bottom: 1.5rem;">Connect your preferred scheduling or contact form solution:</p>
+                <p style="font-size: 0.9rem; color: #666; margin-bottom: 1.5rem;">Calendly, Contact Form 7, or your preferred booking system</p>
+
+                <div style="margin-top: 2rem;">
+                    <a href="mailto:charmaine@cultivatedgrowthnetwork.com" class="cta-button">EMAIL TO SCHEDULE</a>
+                </div>
+            </div>
+
+            <p style="text-align: center; margin-top: 1.5rem; font-size: 0.85rem;">
+                Or call directly to discuss your needs and schedule a time to talk.
+            </p>
+        </section>
+    </div>
+</body>
+</html>
