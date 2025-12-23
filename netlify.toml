@@ -1,0 +1,26 @@
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# Large Media configuration for video files
+[[plugins]]
+  package = "@netlify/plugin-netlify-cms"
+
+# Headers for video files
+[[headers]]
+  for = "*.mp4"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+    Content-Type = "video/mp4"
+
+[[headers]]
+  for = "*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
