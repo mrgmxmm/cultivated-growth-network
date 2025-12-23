@@ -43,7 +43,7 @@
         }
 
         .logo img {
-            height: 50px;
+            height: 90px;
             width: auto;
         }
 
@@ -546,7 +546,7 @@
     <!-- Header -->
     <header class="header">
         <div class="logo">
-            <img src="CGN_Logo_main.webp" alt="Cultivated Growth Network Logo">
+            <img src="CGN-logo-word.png" alt="Cultivated Growth Network Logo">
         </div>
     </header>
 
@@ -560,27 +560,23 @@
 
             <div class="series-badge">Part 1 of 5-Part SEEDS Series</div>
 
-            <h1>The "S" in SEEDS™: Strategy</h1>
-            <p class="subtitle">Consistent sales starts with the right strategy.</p>
+            <h1>Why "Strategy" is the Foundation of Consistent Sales</h1>
+            <p class="subtitle">Before you can execute, engage, develop, or sustain—you need a rock-solid strategy. Without it, you're just guessing. With it, you have a roadmap to predictable, scalable growth.</p>
 
             <!-- Why Strategy Matters -->
             <div class="section" style="margin-top: 2rem;">
-                <h2>Why "Strategy" is the Foundation of Consistent Sales</h2>
-                <p>Before you can execute, engage, develop, or sustain—you need a rock-solid strategy. Without it, you're just guessing. With it, you have a roadmap to predictable, scalable growth.</p>
+                <h2></h2>
+                <p></p>
                 <p style="font-weight: 700; color: var(--cgn-green); font-size: 1.25rem; margin-top: 1.5rem;">This webinar deep-dives exclusively into the "S" in SEEDS™—Strategy.</p>
             </div>
 
             <!-- Video Container -->
             <div class="video-container">
                 <div class="video-wrapper">
-                    <!-- Replace this placeholder with your video embed code (Vimeo, YouTube, Wistia, etc.) -->
-                    <div class="video-placeholder" onclick="alert('Replace this with your video embed code')">
-                        <div class="play-button"></div>
-                        <div class="video-text">▶ Watch Preview</div>
-                    </div>
-                    <!-- Example for embedding video:
-                    <iframe src="YOUR_VIDEO_URL" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                    -->
+                    <video controls poster="" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                        <source src="cgn_webinar_seeds_s_preview.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
             </div>
 
@@ -595,7 +591,7 @@
                 <p style="font-size: 0.9rem; font-style: italic; margin-top: 1rem; color: #666; text-align: center;">Tiered pricing is offered for a limited time and is available only while spots remain. Prices are subject to change, and registration may close early if the class reaches capacity. If all spots are filled, a future session may be added.</p>
             </div>
 
-            <a href="#register" class="cta-button">SECURE YOUR SEAT NOW</a>
+            <a href="https://buy.stripe.com/cNi4gB8i6cvL4TedRQ7AI0d" class="cta-button">SECURE YOUR SEAT NOW</a>
 
             <!-- Series Timeline -->
             <div class="series-timeline">
@@ -740,25 +736,47 @@
                 ⏰ HURRY - SEATS ARE FILLING FAST! 1/2 PRICE UNTIL DECEMBER 31ST!
             </div>
 
-            <a href="#register" class="cta-button">REGISTER FOR STRATEGY WEBINAR NOW</a>
+            <a href="https://buy.stripe.com/cNi4gB8i6cvL4TedRQ7AI0d" class="cta-button">REGISTER FOR STRATEGY WEBINAR NOW</a>
 
             <p style="margin-top: 1.5rem; font-size: 0.9rem;">Secure payment processing. Instant access upon registration.</p>
             <p style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.8);">January: Strategy. February: Engage & Explore. March: Deliver & Sustain. Master all 5 in the 1st quarter of 2025!</p>
         </div>
 
-        <!-- Registration Form Section (Placeholder) -->
-        <section id="register" class="section" style="margin-top: 2rem; border: 3px solid var(--cgn-green);">
+        <!-- Registration Section - Embedded Stripe Checkout -->
+        <section id="register" class="section" style="margin-top: 2rem; border: 3px solid var(--cgn-green); background: white;">
             <h2 style="text-align: center; margin-bottom: 1rem;">Secure Your Seat for Strategy Deep Dive</h2>
             <p style="text-align: center; font-size: 1rem; margin-bottom: 1.5rem;">Part 1 of the SEEDS™ Series</p>
-            <p style="text-align: center; font-size: 1.25rem; font-weight: 700; color: var(--cgn-green); margin-bottom: 1rem;">1/2 Price - Only $47 Until December 31st!</p>
+            <p style="text-align: center; font-size: 1.25rem; font-weight: 700; color: var(--cgn-green); margin-bottom: 2rem;">1/2 Price - Only $47 Until December 31st!</p>
 
-            <div style="text-align: center; padding: 2rem; background-color: rgba(9, 148, 55, 0.1); border-radius: 8px;">
-                <p style="font-weight: 700; font-size: 1.25rem; margin-bottom: 1rem;">Payment Form Integration</p>
-                <p style="margin-bottom: 1.5rem;">Connect your preferred payment processor here:</p>
-                <p style="font-size: 0.9rem; color: #666;">Stripe, PayPal, or your preferred checkout solution</p>
+            <!-- Embedded Checkout Container -->
+            <div style="max-width: 600px; margin: 0 auto; padding: 0 1rem;">
+                <!-- Loading State -->
+                <div id="checkout-loading" style="text-align: center; padding: 3rem;">
+                    <div style="border: 4px solid rgba(9, 148, 55, 0.1); border-top: 4px solid var(--cgn-green); border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite; margin: 0 auto 1rem;"></div>
+                    <p style="color: #666;">Loading secure checkout...</p>
+                </div>
 
-                <div style="margin-top: 2rem;">
-                    <a href="#" class="cta-button" onclick="alert('Connect your payment processor here'); return false;">COMPLETE REGISTRATION NOW</a>
+                <!-- Error State -->
+                <div id="checkout-error" style="display: none; background-color: #fee; color: #c33; padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem; border-left: 4px solid #c33;">
+                    <p id="error-message" style="margin: 0;"></p>
+                </div>
+
+                <!-- Embedded Checkout Form -->
+                <div id="checkout-container"></div>
+
+                <!-- Fallback Button (if embedded fails) -->
+                <div id="checkout-fallback" style="display: none; text-align: center; padding: 2rem; background-color: rgba(9, 148, 55, 0.1); border-radius: 12px;">
+                    <p style="margin-bottom: 1.5rem; color: #666;">Having trouble loading the checkout form?</p>
+                    <a href="https://buy.stripe.com/cNi4gB8i6cvL4TedRQ7AI0d" class="cta-button" style="display: inline-block;">
+                        Continue to Checkout →
+                    </a>
+                </div>
+
+                <!-- Trust Badges -->
+                <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(0,0,0,0.1); text-align: center;">
+                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 0.5rem;">✓ Instant confirmation email</p>
+                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 0.5rem;">✓ 256-bit SSL encryption • PCI compliant</p>
+                    <p style="font-size: 0.9rem; color: #666;">✓ Powered by Stripe</p>
                 </div>
             </div>
 
@@ -767,5 +785,105 @@
             </p>
         </section>
     </div>
+
+    <!-- Stripe.js -->
+    <script src="https://js.stripe.com/v3/"></script>
+
+    <!-- Embedded Checkout Script -->
+    <script>
+        // Initialize Stripe
+        const stripe = Stripe('pk_live_51Sg9KCRWzdMdZsP0W3VGEHhUJRwLqIKxO9kXq6JgqROqYNWEKIK86C6Y93XpIgIUh1gXOdCKZi3q5vXE92N61pO400OAGCp3jq');
+
+        // Product configuration
+        const PRODUCT_CONFIG = {
+            priceId: 'price_1ShHJJRWzdMdZsP0vz9BPF85', // tier2 price for SEEDS-WB-STR-IND
+            productCode: 'SEEDS-WB-STR-IND',
+            successUrl: window.location.origin + '/success.html?session_id={CHECKOUT_SESSION_ID}',
+            returnUrl: window.location.href
+        };
+
+        async function initializeEmbeddedCheckout() {
+            const loadingDiv = document.getElementById('checkout-loading');
+            const errorDiv = document.getElementById('checkout-error');
+            const errorMessage = document.getElementById('error-message');
+            const fallbackDiv = document.getElementById('checkout-fallback');
+            const checkoutContainer = document.getElementById('checkout-container');
+
+            try {
+                // Create checkout session on server
+                const response = await fetch('/create-checkout-session', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        priceId: PRODUCT_CONFIG.priceId,
+                        productCode: PRODUCT_CONFIG.productCode,
+                        successUrl: PRODUCT_CONFIG.successUrl,
+                        embedded: true
+                    }),
+                });
+
+                const { clientSecret, error } = await response.json();
+
+                if (error) {
+                    throw new Error(error);
+                }
+
+                // Initialize embedded checkout
+                const checkout = await stripe.initEmbeddedCheckout({
+                    clientSecret: clientSecret,
+                });
+
+                // Mount the checkout
+                checkout.mount('#checkout-container');
+
+                // Hide loading, show checkout
+                loadingDiv.style.display = 'none';
+                checkoutContainer.style.display = 'block';
+
+            } catch (error) {
+                console.error('Error initializing checkout:', error);
+
+                // Hide loading
+                loadingDiv.style.display = 'none';
+
+                // Show error
+                errorMessage.textContent = 'Unable to load embedded checkout. Please use the button below to continue.';
+                errorDiv.style.display = 'block';
+
+                // Show fallback button
+                fallbackDiv.style.display = 'block';
+            }
+        }
+
+        // Initialize on page load, but only if we're on the page with the register section
+        if (document.getElementById('checkout-container')) {
+            // Check if server is available first
+            fetch('/health')
+                .then(res => {
+                    if (res.ok) {
+                        initializeEmbeddedCheckout();
+                    } else {
+                        throw new Error('Server not available');
+                    }
+                })
+                .catch(() => {
+                    // Server not available, show fallback immediately
+                    document.getElementById('checkout-loading').style.display = 'none';
+                    document.getElementById('error-message').textContent = 'Server connection required for embedded checkout.';
+                    document.getElementById('checkout-error').style.display = 'block';
+                    document.getElementById('checkout-fallback').style.display = 'block';
+                });
+        }
+    </script>
+
+    <!-- Add CSS for loading animation -->
+    <style>
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </body>
 </html>

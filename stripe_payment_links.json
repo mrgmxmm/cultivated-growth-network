@@ -1,0 +1,67 @@
+{
+  "SEEDS-WB-STR-IND": {
+    "url": "https://buy.stripe.com/cNi4gB8i6cvL4TedRQ7AI0d",
+    "price_tier": "tier2",
+    "name": "Understanding Your Buyers"
+  },
+  "SEEDS-WB-ADD-IND": {
+    "url": "https://buy.stripe.com/00w5kF0PE3Zf5XidRQ7AI0e",
+    "price_tier": "regular",
+    "name": "Fertilizing Your SEEDS\u2122"
+  },
+  "MEMBERSHIP-MONTHLY": {
+    "url": "https://buy.stripe.com/5kQcN7dCqeDT71m0107AI0f",
+    "price_tier": "monthly",
+    "name": "SEEDS\u2122 Series Monthly Membership"
+  },
+  "MEMBERSHIP-ANNUAL": {
+    "url": "https://buy.stripe.com/8x29AVcym2VbclGeVU7AI0g",
+    "price_tier": "annual",
+    "name": "SEEDS\u2122 Series Annual Membership"
+  },
+  "SEEDS-WB-INT-IND": {
+    "url": "https://buy.stripe.com/fZufZj69YcvL99u8xw7AI0h",
+    "price_tier": "regular",
+    "name": "Intro to SEEDS\u2122"
+  },
+  "SEEDS-WB-ENG-IND": {
+    "url": "https://buy.stripe.com/6oUaEZbuidzPgBW3dc7AI0i",
+    "price_tier": "regular",
+    "name": "The Art of Prospecting"
+  },
+  "SEEDS-WB-EXP-IND": {
+    "url": "https://buy.stripe.com/aFafZj9ma8fvclG2987AI0j",
+    "price_tier": "regular",
+    "name": "Discovery That Wins Deals"
+  },
+  "SEEDS-WB-DPC-IND": {
+    "url": "https://buy.stripe.com/7sYcN77e2anD99ufZY7AI0k",
+    "price_tier": "regular",
+    "name": "The Art of Proposing and Closing"
+  },
+  "SEEDS-WB-SUS-IND": {
+    "url": "https://buy.stripe.com/fZu00l2XMcvL99u4hg7AI0l",
+    "price_tier": "regular",
+    "name": "Sustaining Relationships & Referrals"
+  },
+  "SEEDS-WB-IMP-IND": {
+    "url": "https://buy.stripe.com/28E7sN69YcvL85q9BA7AI0m",
+    "price_tier": "regular",
+    "name": "Selling in Quick Close Environments"
+  },
+  "SEEDS-WB-NEG-IND": {
+    "url": "https://buy.stripe.com/9B63cx8i67brclGeVU7AI0n",
+    "price_tier": "regular",
+    "name": "The Art of Negotiation"
+  },
+  "SEEDS-WB-TGH-IND": {
+    "url": "https://buy.stripe.com/00w7sNdCq7brbhC4hg7AI0o",
+    "price_tier": "regular",
+    "name": "How to Sell in Tough Markets"
+  },
+  "SEEDS-WB-COM-IND": {
+    "url": "https://buy.stripe.com/dRm7sNbuifHX5Xi0107AI0p",
+    "price_tier": "regular",
+    "name": "The Art of Sales Communication"
+  }
+}

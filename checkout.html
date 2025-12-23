@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Checkout - Cultivated Growth Network</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://js.stripe.com/v3/"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cgn-yellow: #ECA310;
+            --cgn-green: #099437;
+            --black: #000000;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, var(--cgn-yellow) 0%, var(--cgn-green) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .checkout-container {
+            background-color: white;
+            border-radius: 16px;
+            padding: 3rem;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .logo img {
+            height: 60px;
+        }
+
+        .checkout-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .checkout-header h1 {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--black);
+            margin-bottom: 0.5rem;
+        }
+
+        .checkout-header p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .product-details {
+            background-color: rgba(236, 163, 16, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--cgn-green);
+        }
+
+        .product-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 0.5rem;
+        }
+
+        .product-description {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .price-display {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 2px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .price-label {
+            font-weight: 600;
+            color: var(--black);
+        }
+
+        .price-amount {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--cgn-green);
+        }
+
+        .checkout-button {
+            width: 100%;
+            background-color: var(--cgn-green);
+            color: var(--white);
+            padding: 1.25rem;
+            font-size: 1.125rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(9, 148, 55, 0.3);
+        }
+
+        .checkout-button:hover {
+            background-color: #077a2d;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(9, 148, 55, 0.4);
+        }
+
+        .checkout-button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .loading-spinner {
+            display: none;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .spinner {
+            border: 3px solid rgba(9, 148, 55, 0.3);
+            border-top: 3px solid var(--cgn-green);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .error-message {
+            display: none;
+            background-color: #fee;
+            color: #c33;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 4px solid #c33;
+        }
+
+        .security-badges {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+
+        .security-badge {
+            color: #666;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+
+        .back-link a {
+            color: var(--cgn-green);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .checkout-container {
+                padding: 2rem 1.5rem;
+            }
+
+            .checkout-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .price-amount {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="checkout-container">
+        <div class="logo">
+            <img src="CGN_Logo_main.webp" alt="Cultivated Growth Network" onerror="this.style.display='none'">
+        </div>
+
+        <div class="checkout-header">
+            <h1>Secure Checkout</h1>
+            <p>Complete your purchase securely with Stripe</p>
+        </div>
+
+        <div class="loading-spinner" id="loadingSpinner">
+            <div class="spinner"></div>
+            <p style="margin-top: 1rem; color: #666;">Loading product details...</p>
+        </div>
+
+        <div class="error-message" id="errorMessage"></div>
+
+        <div class="product-details" id="productDetails" style="display: none;">
+            <div class="product-name" id="productName"></div>
+            <div class="product-description" id="productDescription"></div>
+            <div class="price-display">
+                <span class="price-label">Total:</span>
+                <span class="price-amount" id="priceAmount"></span>
+            </div>
+        </div>
+
+        <button class="checkout-button" id="checkoutButton" disabled>
+            Proceed to Secure Payment
+        </button>
+
+        <div class="security-badges">
+            <div class="security-badge">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M8 1l6 2v5c0 3.5-2.5 6-6 7-3.5-1-6-3.5-6-7V3l6-2z"/>
+                </svg>
+                Secure Checkout
+            </div>
+            <div class="security-badge">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M5 8h6M8 5v6M2 8c0-3.3 2.7-6 6-6s6 2.7 6 6-2.7 6-6 6-6-2.7-6-6z"/>
+                </svg>
+                256-bit SSL
+            </div>
+        </div>
+
+        <div class="back-link">
+            <a href="javascript:history.back()">← Back to previous page</a>
+        </div>
+    </div>
+
+    <script type="module">
+        // Import product keys
+        import { STRIPE_PRODUCTS, getPrice } from './stripe_product_keys.js';
+
+        // Initialize Stripe
+        const stripe = Stripe('pk_live_51Sg9KCRWzdMdZsP0W3VGEHhUJRwLqIKxO9kXq6JgqROqYNWEKIK86C6Y93XpIgIUh1gXOdCKZi3q5vXE92N61pO400OAGCp3jq');
+
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const productCode = urlParams.get('product');
+        const tier = urlParams.get('tier') || 'regular';
+        const mode = urlParams.get('mode') || 'payment'; // 'payment' or 'subscription'
+        const returnUrl = urlParams.get('return') || 'index.html';
+
+        // DOM elements
+        const loadingSpinner = document.getElementById('loadingSpinner');
+        const errorMessage = document.getElementById('errorMessage');
+        const productDetails = document.getElementById('productDetails');
+        const productName = document.getElementById('productName');
+        const productDescription = document.getElementById('productDescription');
+        const priceAmount = document.getElementById('priceAmount');
+        const checkoutButton = document.getElementById('checkoutButton');
+
+        function showError(message) {
+            errorMessage.textContent = message;
+            errorMessage.style.display = 'block';
+            loadingSpinner.style.display = 'none';
+            productDetails.style.display = 'none';
+        }
+
+        function formatPrice(cents) {
+            return `$${(cents / 100).toFixed(2)}`;
+        }
+
+        async function initializeCheckout() {
+            loadingSpinner.style.display = 'block';
+
+            // Validate product code
+            if (!productCode) {
+                showError('No product specified. Please select a product to purchase.');
+                return;
+            }
+
+            // Get product information
+            const product = STRIPE_PRODUCTS[productCode];
+            if (!product) {
+                showError(`Product "${productCode}" not found. Please contact support.`);
+                return;
+            }
+
+            // Get price ID
+            const priceId = product.prices[tier];
+            if (!priceId) {
+                showError(`Price tier "${tier}" not available for this product.`);
+                return;
+            }
+
+            // Display product details
+            productName.textContent = product.name;
+            productDescription.textContent = `Product Code: ${productCode}`;
+
+            // Fetch price details from Stripe to get the amount
+            try {
+                const response = await fetch(`https://api.stripe.com/v1/prices/${priceId}`, {
+                    headers: {
+                        'Authorization': 'Bearer pk_live_51Sg9KCRWzdMdZsP0W3VGEHhUJRwLqIKxO9kXq6JgqROqYNWEKIK86C6Y93XpIgIUh1gXOdCKZi3q5vXE92N61pO400OAGCp3jq'
+                    }
+                });
+                const priceData = await response.json();
+
+                if (priceData.unit_amount) {
+                    priceAmount.textContent = formatPrice(priceData.unit_amount);
+                }
+            } catch (err) {
+                console.error('Error fetching price:', err);
+                priceAmount.textContent = 'See checkout';
+            }
+
+            // Show product details
+            loadingSpinner.style.display = 'none';
+            productDetails.style.display = 'block';
+            checkoutButton.disabled = false;
+
+            // Setup checkout button
+            checkoutButton.onclick = async function() {
+                checkoutButton.disabled = true;
+                checkoutButton.textContent = 'Redirecting to checkout...';
+
+                try {
+                    // Determine which endpoint to use based on mode
+                    const endpoint = mode === 'subscription' ? '/create-subscription-session' : '/create-checkout-session';
+
+                    // Create checkout session
+                    const response = await fetch(endpoint, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            priceId: priceId,
+                            productCode: productCode,
+                            successUrl: `${window.location.origin}/success.html?session_id={CHECKOUT_SESSION_ID}`,
+                            cancelUrl: `${window.location.origin}/${returnUrl}`
+                        })
+                    });
+
+                    const session = await response.json();
+
+                    if (session.error) {
+                        throw new Error(session.error);
+                    }
+
+                    // Redirect to Stripe Checkout
+                    const result = await stripe.redirectToCheckout({
+                        sessionId: session.id
+                    });
+
+                    if (result.error) {
+                        throw new Error(result.error.message);
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    showError(`Checkout failed: ${error.message}. Please try again or contact support.`);
+                    checkoutButton.disabled = false;
+                    checkoutButton.textContent = 'Proceed to Secure Payment';
+                }
+            };
+        }
+
+        // Initialize on page load
+        initializeCheckout();
+    </script>
+</body>
+</html>
