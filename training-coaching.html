@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Calendly CSS -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="training-styles.css">
 </head>
@@ -581,7 +583,7 @@
                 <p class="pricing-note">Pricing varies based on team size, delivery format (virtual vs. in-person), customization level, and ongoing support needs. Contact us for a custom quote.</p>
 
                 <div class="pricing-cta">
-                    <a href="index.html#contact" class="btn btn-primary btn-large">Schedule a Discovery Call</a>
+                    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/charmaine-cultivatedgrowthnetwork/cgn-discovery-call'});return false;" class="btn btn-primary btn-large">Schedule a Discovery Call</a>
                 </div>
             </div>
         </div>
@@ -635,7 +637,7 @@
                 <h2>Ready to Transform Your Sales Team?</h2>
                 <p class="lead">Let's discuss your challenges and design a custom training or coaching program that delivers measurable results.</p>
                 <div class="cta-buttons">
-                    <a href="index.html#contact" class="btn btn-primary btn-large">Schedule a Discovery Call</a>
+                    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/charmaine-cultivatedgrowthnetwork/cgn-discovery-call'});return false;" class="btn btn-primary btn-large">Schedule a Discovery Call</a>
                     <a href="speaking-consulting.html" class="btn btn-secondary btn-large">Need Full Implementation? See Consulting</a>
                 </div>
             </div>
@@ -687,5 +689,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <!-- Calendly Widget Script -->
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </body>
 </html>

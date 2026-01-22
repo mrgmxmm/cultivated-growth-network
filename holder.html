@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Calendly CSS -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <style>
         /* Reset & Base Styles */
         * {
@@ -294,7 +296,7 @@
                 </div>
 
                 <div class="cta-section">
-                    <a href="index.html#contact" class="btn btn-primary">Book a Discovery Call</a>
+                    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/charmaine-cultivatedgrowthnetwork/cgn-discovery-call'});return false;" class="btn btn-primary">Book a Discovery Call</a>
                     <a href="index.html" class="btn btn-secondary">Explore Services</a>
                 </div>
 
@@ -306,5 +308,7 @@
             </div>
         </div>
     </div>
+    <!-- Calendly Widget Script -->
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </body>
 </html>

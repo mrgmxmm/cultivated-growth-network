@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Calendly CSS -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -37,7 +39,7 @@
                     <p class="hero-subtitle">Transform your sales organization with proven training, coaching, and consulting that integrates the human side of sales with systematic, results-driven methods.</p>
                     <div class="hero-cta">
                         <a href="#pathways" class="btn btn-primary">Explore Your Path</a>
-                        <a href="#contact" class="btn btn-secondary">Book a Discovery Call</a>
+                        <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/charmaine-cultivatedgrowthnetwork/cgn-discovery-call'});return false;" class="btn btn-secondary">Book a Discovery Call</a>
                     </div>
                     <div class="hero-stats">
                         <div class="stat">
@@ -283,7 +285,7 @@
                 <h2>Ready to Cultivate Your Growth?</h2>
                 <p class="lead">Let's have a conversation about where you are now and where you want to be. No pressure, just possibilities.</p>
                 <div class="cta-buttons">
-                    <a href="#" class="btn btn-primary btn-large">Schedule a Discovery Call</a>
+                    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/charmaine-cultivatedgrowthnetwork/cgn-discovery-call'});return false;" class="btn btn-primary btn-large">Schedule a Discovery Call</a>
                     <a href="mailto:charmaine@cultivatedgrowthnetwork.com" class="btn btn-secondary btn-large">Email Us</a>
                 </div>
                 <p class="cta-subtext">Or explore our <a href="diy-courses.html">self-paced courses</a> to start growing today.</p>
@@ -336,5 +338,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <!-- Calendly Widget Script -->
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </body>
 </html>

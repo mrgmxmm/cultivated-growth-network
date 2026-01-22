@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Calendly CSS -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="consulting-styles.css">
 </head>
@@ -597,7 +599,7 @@
                 <h2>Ready for Enterprise-Level Transformation?</h2>
                 <p class="lead">Let's discuss your vision and explore whether speaking or consulting is the right solution.</p>
                 <div class="cta-buttons">
-                    <a href="index.html#contact" class="btn btn-primary btn-large">Schedule a Discovery Call</a>
+                    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/charmaine-cultivatedgrowthnetwork/cgn-discovery-call'});return false;" class="btn btn-primary btn-large">Schedule a Discovery Call</a>
                     <a href="training-coaching.html" class="btn btn-secondary btn-large">Not Ready for Consulting? See Training</a>
                 </div>
                 <p class="cta-subtext">All consulting engagements start with a no-obligation discovery call</p>
@@ -649,5 +651,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <!-- Calendly Widget Script -->
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </body>
 </html>

@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Calendly CSS -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <style>
         /* Reset & Base Styles */
         * {
@@ -467,7 +469,7 @@
             <p>It happens when strategy, communication, and execution are aligned.</p>
             <p style="margin-top: 2rem; margin-bottom: 2.5rem;">Let's identify what's holding your sales performance back—and build a system that works.</p>
 
-            <a href="#contact" class="cta-button">SCHEDULE A CONSULTATION</a>
+            <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/charmaine-cultivatedgrowthnetwork/cgn-discovery-call'});return false;" class="cta-button">SCHEDULE A CONSULTATION</a>
 
             <p style="margin-top: 1.5rem; font-size: 0.9rem;">
                 Email: <a href="mailto:charmaine@cultivatedgrowthnetwork.com" style="color: var(--cgn-yellow); font-weight: 600; text-decoration: none;">charmaine@cultivatedgrowthnetwork.com</a>
@@ -480,12 +482,14 @@
             <p style="text-align: center; font-size: 1rem; margin-bottom: 2rem;">Schedule a complimentary consultation to discuss your sales challenges and explore how we can help.</p>
 
             <div style="text-align: center; padding: 2rem; background-color: rgba(9, 148, 55, 0.05); border-radius: 8px;">
-                <p style="font-weight: 700; font-size: 1.25rem; margin-bottom: 1rem;">Contact Form Integration</p>
-                <p style="margin-bottom: 1.5rem;">Connect your preferred scheduling or contact form solution:</p>
-                <p style="font-size: 0.9rem; color: #666; margin-bottom: 1.5rem;">Calendly, Contact Form 7, or your preferred booking system</p>
+                <p style="font-weight: 700; font-size: 1.25rem; margin-bottom: 1rem;">Schedule Your Discovery Call</p>
+                <p style="margin-bottom: 1.5rem;">Book a complimentary consultation to discuss your sales challenges and explore solutions.</p>
 
                 <div style="margin-top: 2rem;">
-                    <a href="mailto:charmaine@cultivatedgrowthnetwork.com" class="cta-button">EMAIL TO SCHEDULE</a>
+                    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/charmaine-cultivatedgrowthnetwork/cgn-discovery-call'});return false;" class="cta-button">BOOK YOUR CALL NOW</a>
+                </div>
+                <div style="margin-top: 1.5rem;">
+                    <a href="mailto:charmaine@cultivatedgrowthnetwork.com" style="color: var(--cgn-green); font-weight: 600; text-decoration: none;">Or email us directly</a>
                 </div>
             </div>
 
@@ -494,5 +498,7 @@
             </p>
         </section>
     </div>
+    <!-- Calendly Widget Script -->
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </body>
 </html>

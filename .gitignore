@@ -25,5 +25,13 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Large video files will be uploaded via Netlify Large Media
-# cgn_webinar_seeds_s_preview.mp4
+# Large video files will be uploaded via Netlify Large Media or CDN
+cgn_webinar_seeds_s_preview.mp4
+*.mp4
+*.mov
+
+# Local Netlify folder
+.netlify
+
+# Webinar registrations data
+webinar-registrations.json
